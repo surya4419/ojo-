@@ -1,0 +1,17 @@
+[build]
+  command = "npm run build"
+  publish = "build"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[context.production.environment]
+  VITE_API_BASE_URL = "https://tidb-backend.onrender.com/api"
+
+[context.deploy-preview.environment]
+  VITE_API_BASE_URL = "https://tidb-backend-staging.onrender.com/api"
